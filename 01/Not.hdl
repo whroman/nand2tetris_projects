@@ -1,16 +1,18 @@
 // This file is part of www.nand2tetris.org
 // and the book "The Elements of Computing Systems"
 // by Nisan and Schocken, MIT Press.
-// File name: projects/01/Not.hdl
+// File name: projects/01/And.hdl
 
 /**
- * Not gate: out = not in
+ * And gate: out = 1 if {a==1 and b==1}, 0 otherwise
+ * And gate: if {a==1 and b==1} then out = 1 else out = 0
  */
 
 CHIP Not {
-    IN in;
+    IN a;
     OUT out;
 
     PARTS:
     // Put your code here:
-}
+    Nand(a=a, b=a, out=out);
+}   
