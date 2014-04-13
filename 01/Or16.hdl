@@ -2,7 +2,8 @@
 // and the book "The Elements of Computing Systems"
 // by Nisan and Schocken, MIT Press.
 // File name: projects/01/Or16.hdl
-
+
+
 
 /**
  * 16-bit bitwise Or gate: for i=0..15 out[i] = a[i] or b[i].
@@ -13,5 +14,65 @@ CHIP Or16 {
     OUT out[16];
 
     PARTS:
-    // Put your code here:
+
+    Not(a=a[1], out=nota);
+    Not(a=b[1], out=notb);
+    Nand(a=nota, b=notb, out=out[1]);
+
+    Not(a=a[2], out=nota);
+    Not(a=b[2], out=notb);
+    Nand(a=nota, b=notb, out=out[2]);
+
+    Not(a=a[3], out=nota);
+    Not(a=b[3], out=notb);
+    Nand(a=nota, b=notb, out=out[3]);
+
+    Not(a=a[4], out=nota);
+    Not(a=b[4], out=notb);
+    Nand(a=nota, b=notb, out=out[4]);
+
+    Not(a=a[5], out=nota);
+    Not(a=b[5], out=notb);
+    Nand(a=nota, b=notb, out=out[5]);
+
+    Not(a=a[6], out=nota);
+    Not(a=b[6], out=notb);
+    Nand(a=nota, b=notb, out=out[6]);
+
+    Not(a=a[7], out=nota);
+    Not(a=b[7], out=notb);
+    Nand(a=nota, b=notb, out=out[7]);
+
+    Not(a=a[8], out=nota);
+    Not(a=b[8], out=notb);
+    Nand(a=nota, b=notb, out=out[8]);
+
+    Not(a=a[9], out=nota);
+    Not(a=b[9], out=notb);
+    Nand(a=nota, b=notb, out=out[9]);
+
+    Not(a=a[10], out=nota);
+    Not(a=b[10], out=notb);
+    Nand(a=nota, b=notb, out=out[10]);
+
+    Not(a=a[11], out=nota);
+    Not(a=b[11], out=notb);
+    Nand(a=nota, b=notb, out=out[11]);
+
+    Not(a=a[12], out=nota);
+    Not(a=b[12], out=notb);
+    Nand(a=nota, b=notb, out=out[12]);
+
+    Not(a=a[13], out=nota);
+    Not(a=b[13], out=notb);
+    Nand(a=nota, b=notb, out=out[13]);
+
+    Not(a=a[14], out=nota);
+    Not(a=b[14], out=notb);
+    Nand(a=nota, b=notb, out=out[14]);
+
+    Not(a=a[15], out=nota);
+    Not(a=b[15], out=notb);
+    Nand(a=nota, b=notb, out=out[15]);
+
 }
