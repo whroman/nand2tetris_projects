@@ -14,5 +14,17 @@ CHIP Bit {
     OUT out;
 
     PARTS:
-    // Put your code here:
+    Mux(
+        a = isStored,
+        b = in,
+        sel = load,
+        out = toStore
+    );
+
+    DFF(
+        in = toStore,
+        out = isStored,
+        out = out
+    );
+
 }

@@ -16,9 +16,40 @@ CHIP PC {
     OUT out[16];
 
     PARTS:
-    // Put your code here:
+    // Increment
+    Inc16(
+        in = storedValue,
+        out = incrementedIn
+    );
+
+    Mux16(
+        a = storedValue,
+        b = incrementedIn,
+        sel = inc,
+        out = incOut
+    );
+
+    // Load
+    Mux16(
+        a = incOut,
+        b = in,
+        sel = load,
+        out = loadOut
+    );
+
+    // Reset
+    Mux16(
+        a = loadOut,
+        b[0..15] = false,
+        sel = reset,
+        out = toStore
+    );
+
+    Register(
+        in = toStore,
+        load = true,
+        out = storedValue,
+        out = out
+    );
+
 }
-
-
-
-
