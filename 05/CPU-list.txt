@@ -1,0 +1,39 @@
+`instruction` Decoding
+=================
+
+Mux of `instruction` and last ALU output 
+- select `instruction` if it is an A-instr
+- `sel` is `instruction[15]`
+
+A-Register
+- load if `instruction` is an A-instr
+- `load` is opposite of `instruction[15]`
+
+Mux of `inM` and output of A-Register
+- If A-instr, select `instruction`
+- 'sel' is `instruction[15]`
+- If C-instr, use a-bit to select output of A-Register or `inM`
+- 'sel' is `instruction[12]`
+
+ALU
+- If C-instr 
+
+C-Instruction
+==== 
+111 a cccc ccdd djjj
+
+a-bit
+- decides whether A or `inM` is used in ALU computations
+
+c-bits
+- fed into ALU
+
+d-bits...
+- d1 - whether to store computed value in A-Register
+- d2 - whether to store computed value in D-Register
+- d1 - whether to store computed value in M-Register (`writeM`)
+
+j-bits...
+- j1 - if ALU output is positive
+- j2 - if ALU output is zero
+- j3 - if ALU output is negative
